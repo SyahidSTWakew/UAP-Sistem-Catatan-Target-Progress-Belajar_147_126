@@ -95,20 +95,3 @@ Pengujian dilakukan secara manual dengan hasil sebagai berikut:
 ## 📌 Keterangan
 
 Aplikasi ini dibuat sesuai dengan ketentuan dan kriteria Modul UAP Pemrograman Lanjut serta telah melalui proses testing dan code review untuk memastikan aplikasi berjalan dengan baik dan stabil.
-
----
-
-## ✅ Status Project
-
-- ✔ Sesuai Modul UAP
-- ✔ Menggunakan Java Swing
-- ✔ Menerapkan konsep OOP dan CRUD
-- ✔ Tidak menggunakan library eksternal
-- ✔ Tidak memerlukan Maven
-- ✔ Siap untuk demo dan penilaian
-
----
-
-### 🎤 Catatan Saat Demo
-
-Aplikasi ini menerapkan fitur CRUD, GUI Java Swing, file handling, serta sorting data sesuai dengan ketentuan pada modul UAP.
