@@ -19,25 +19,43 @@ public class MainFrame extends JFrame {
 
         // ================= SIDEBAR =================
         JPanel sidebar = new JPanel(new GridLayout(4,1));
-        sidebar.setBackground(new Color(240, 240, 240)); // abu terang
+        sidebar.setBackground(new Color(79,141,245));
 
         JButton btnDash = new JButton("Dashboard");
         JButton btnInput = new JButton("Input Target");
         JButton btnList = new JButton("List Target");
         JButton btnHist = new JButton("History");
 
-        // ===== WARNA TIAP TOMBOL =====
-        btnDash.setBackground(new Color(229, 57, 53));   // Merah
-        btnInput.setBackground(new Color(253, 216, 53)); // Kuning
-        btnList.setBackground(new Color(67, 160, 71));   // Hijau
-        btnHist.setBackground(new Color(30, 136, 229));  // Biru
-
         JButton[] btns = {btnDash, btnInput, btnList, btnHist};
+
         for (JButton b : btns) {
+            b.setBackground(new Color(79,141,245));
             b.setForeground(Color.WHITE);
             b.setFocusPainted(false);
             b.setFont(new Font("Segoe UI", Font.BOLD, 14));
+
+            // 👉 BIAR KELIHATAN BISA DIKLIK
+            b.setCursor(new Cursor(Cursor.HAND_CURSOR));
+
+            // Padding biar tombol enak dilihat
             b.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
+
+            // 👉 EFEK HOVER
+            Color normal = b.getBackground();
+            Color hover = normal.darker();
+
+            b.addMouseListener(new java.awt.event.MouseAdapter() {
+                @Override
+                public void mouseEntered(java.awt.event.MouseEvent e) {
+                    b.setBackground(hover);
+                }
+
+                @Override
+                public void mouseExited(java.awt.event.MouseEvent e) {
+                    b.setBackground(normal);
+                }
+            });
+
             sidebar.add(b);
         }
 

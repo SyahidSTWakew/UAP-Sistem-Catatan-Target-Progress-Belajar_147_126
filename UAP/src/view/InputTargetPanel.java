@@ -28,7 +28,7 @@ public class InputTargetPanel extends JPanel {
         gbc.gridx = 0; gbc.gridy = 0;
         add(new JLabel("Nama Tugas"), gbc);
         gbc.gridx = 1;
-        tfName.setPreferredSize(new Dimension(260, 32));
+        tfName.setPreferredSize(new Dimension(430, 20));
         add(tfName, gbc);
 
         gbc.gridx = 0; gbc.gridy++;
