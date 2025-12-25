@@ -17,22 +17,31 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
+        // ================= SIDEBAR =================
         JPanel sidebar = new JPanel(new GridLayout(4,1));
-        sidebar.setBackground(new Color(79,141,245));
+        sidebar.setBackground(new Color(240, 240, 240)); // abu terang
 
         JButton btnDash = new JButton("Dashboard");
         JButton btnInput = new JButton("Input Target");
         JButton btnList = new JButton("List Target");
         JButton btnHist = new JButton("History");
 
+        // ===== WARNA TIAP TOMBOL =====
+        btnDash.setBackground(new Color(229, 57, 53));   // Merah
+        btnInput.setBackground(new Color(253, 216, 53)); // Kuning
+        btnList.setBackground(new Color(67, 160, 71));   // Hijau
+        btnHist.setBackground(new Color(30, 136, 229));  // Biru
+
         JButton[] btns = {btnDash, btnInput, btnList, btnHist};
         for (JButton b : btns) {
-            b.setBackground(new Color(79,141,245));
             b.setForeground(Color.WHITE);
             b.setFocusPainted(false);
+            b.setFont(new Font("Segoe UI", Font.BOLD, 14));
+            b.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
             sidebar.add(b);
         }
 
+        // ================= CONTENT =================
         JPanel content = new JPanel(new CardLayout());
 
         dashboardPanel = new DashboardPanel();
@@ -47,6 +56,7 @@ public class MainFrame extends JFrame {
 
         CardLayout cl = (CardLayout) content.getLayout();
 
+        // ================= ACTION =================
         btnDash.addActionListener(e -> {
             dashboardPanel.refresh();
             cl.show(content, "dash");
