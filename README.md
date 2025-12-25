@@ -1,28 +1,29 @@
-# Study Target Manager
+# 📘 Study Target & Progress Tracker
 
-Aplikasi **Study Target Manager** adalah aplikasi desktop berbasis **Java Swing** yang dibuat untuk memenuhi **Ujian Akhir Praktikum (UAP) Mata Kuliah Pemrograman Lanjut**.
+Aplikasi **Study Target & Progress Tracker** adalah aplikasi desktop berbasis **Java Swing** yang dikembangkan untuk memenuhi **Ujian Akhir Praktikum (UAP)** pada mata kuliah **Pemrograman Lanjut**.
 
-Aplikasi ini digunakan untuk mengelola data target belajar dengan fitur **CRUD**, **GUI**, dan **penyimpanan data menggunakan file CSV**.
-
----
-
-## Fitur Aplikasi
-
-- Input data target belajar
-- Menampilkan data target dalam tabel
-- Edit data target
-- Hapus data target
-- Menandai target sebagai selesai
-- Sorting data berdasarkan:
-    - Deadline terdekat
-    - Deadline terjauh
-    - Status
-- Pencarian (search) data target
-- Penyimpanan data otomatis ke file CSV
+Aplikasi ini digunakan untuk mengelola target belajar dengan menerapkan konsep **Object Oriented Programming (OOP)**, **Graphical User Interface (GUI)**, **CRUD**, serta **penyimpanan data menggunakan file CSV**.
 
 ---
 
-## Teknologi yang Digunakan
+## ✨ Fitur Aplikasi
+
+- Menambahkan target belajar (Create)
+- Menampilkan daftar target belajar dalam bentuk tabel (Read)
+- Mengedit data target belajar (Update)
+- Menghapus data target belajar (Delete)
+- Menandai target belajar sebagai **Selesai**
+- Mengurutkan data target berdasarkan:
+  - Deadline terdekat
+  - Deadline terjauh
+  - Status (Belum → Proses → Selesai)
+- Menampilkan Dashboard Progress Belajar
+- Menampilkan Riwayat Target yang Telah Selesai
+- Penyimpanan data otomatis menggunakan file CSV
+
+---
+
+## 🛠️ Teknologi yang Digunakan
 
 - Java SE
 - Java Swing (GUI)
@@ -31,26 +32,30 @@ Aplikasi ini digunakan untuk mengelola data target belajar dengan fitur **CRUD**
 
 ---
 
-## Struktur Project
+## 📂 Struktur Project
 
+```
+src
 ├── App.java
 ├── model
-│ └── StudyTarget.java
+│   └── StudyTarget.java
 ├── utils
-│ ├── DataStore.java
-│ └── FileManager.java
+│   ├── DataStore.java
+│   └── FileManager.java
 └── view
-├── MainFrame.java
-├── InputTargetPanel.java
-├── ListTargetPanel.java
-└── HistoryPanel.java
+    ├── MainFrame.java
+    ├── DashboardPanel.java
+    ├── InputTargetPanel.java
+    ├── ListTargetPanel.java
+    ├── HistoryPanel.java
+    └── RoundedButton.java
 
-yaml
-Copy code
+data.csv
+```
 
 ---
 
-## Cara Menjalankan Program
+## ▶️ Cara Menjalankan Program
 
 1. Pastikan Java JDK 8 atau lebih baru sudah terinstal
 2. Buka project menggunakan IDE (IntelliJ IDEA / NetBeans / Eclipse)
@@ -59,33 +64,51 @@ Copy code
 
 ---
 
-## Format Penyimpanan Data
+## 💾 Format Penyimpanan Data
 
 Data disimpan dalam file `data.csv` dengan format:
 
+```
 Nama Tugas,Mata Kuliah,Deadline,Status
-
-makefile
-Copy code
+```
 
 Contoh:
-
-UTS Pemrograman,Java,2025-06-10,Belum
-
-yaml
-Copy code
+```
+UTS Pemrograman Lanjut,Java,2025-06-10,Belum
+```
 
 ---
 
-## Pengujian Program
+## 🧪 Pengujian Program
 
-- Input data dengan format benar → berhasil disimpan
-- Input data tidak valid → ditolak
-- Data tersimpan dan dimuat kembali saat aplikasi dijalankan
-- Fitur sorting dan pencarian berjalan dengan baik
+Pengujian dilakukan secara manual dengan hasil sebagai berikut:
+
+- Input data dengan format valid → berhasil disimpan
+- Input data tidak valid → ditolak dengan pesan kesalahan
+- Data tetap tersimpan setelah aplikasi ditutup dan dijalankan kembali
+- Fitur sorting berjalan sesuai kriteria
+- Fitur edit, hapus, dan update status berjalan dengan baik
+- Dashboard dan history menampilkan data sesuai perubahan
 
 ---
 
-## Keterangan
+## 📌 Keterangan
 
-Aplikasi ini dibuat sesuai dengan ketentuan dan kriteria pada **Modul UAP Pemrograman Lanjut**.
+Aplikasi ini dibuat sesuai dengan ketentuan dan kriteria Modul UAP Pemrograman Lanjut serta telah melalui proses testing dan code review untuk memastikan aplikasi berjalan dengan baik dan stabil.
+
+---
+
+## ✅ Status Project
+
+- ✔ Sesuai Modul UAP
+- ✔ Menggunakan Java Swing
+- ✔ Menerapkan konsep OOP dan CRUD
+- ✔ Tidak menggunakan library eksternal
+- ✔ Tidak memerlukan Maven
+- ✔ Siap untuk demo dan penilaian
+
+---
+
+### 🎤 Catatan Saat Demo
+
+Aplikasi ini menerapkan fitur CRUD, GUI Java Swing, file handling, serta sorting data sesuai dengan ketentuan pada modul UAP.
