@@ -17,7 +17,6 @@ public class MainFrame extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
-        // ================= SIDEBAR =================
         JPanel sidebar = new JPanel(new GridLayout(4,1));
         sidebar.setBackground(new Color(79,141,245));
 
@@ -34,13 +33,10 @@ public class MainFrame extends JFrame {
             b.setFocusPainted(false);
             b.setFont(new Font("Segoe UI", Font.BOLD, 14));
 
-            // 👉 BIAR KELIHATAN BISA DIKLIK
             b.setCursor(new Cursor(Cursor.HAND_CURSOR));
 
-            // Padding biar tombol enak dilihat
             b.setBorder(BorderFactory.createEmptyBorder(20, 10, 20, 10));
 
-            // 👉 EFEK HOVER
             Color normal = b.getBackground();
             Color hover = normal.darker();
 
@@ -59,7 +55,6 @@ public class MainFrame extends JFrame {
             sidebar.add(b);
         }
 
-        // ================= CONTENT =================
         JPanel content = new JPanel(new CardLayout());
 
         dashboardPanel = new DashboardPanel();
@@ -74,7 +69,6 @@ public class MainFrame extends JFrame {
 
         CardLayout cl = (CardLayout) content.getLayout();
 
-        // ================= ACTION =================
         btnDash.addActionListener(e -> {
             dashboardPanel.refresh();
             cl.show(content, "dash");

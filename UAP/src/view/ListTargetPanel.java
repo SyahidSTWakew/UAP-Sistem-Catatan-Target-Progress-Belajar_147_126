@@ -22,7 +22,6 @@ public class ListTargetPanel extends JPanel {
         setLayout(new BorderLayout());
         setBackground(new Color(245,247,250));
 
-        // ================= TABLE =================
         model = new DefaultTableModel(
                 new String[]{"Nama", "Pelajaran", "Deadline", "Status"}, 0
         );
@@ -30,7 +29,6 @@ public class ListTargetPanel extends JPanel {
         table.setRowHeight(28);
         refresh();
 
-        // ================= SEARCH =================
         tfSearch = new JTextField(15);
         tfSearch.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent e) {
@@ -38,7 +36,6 @@ public class ListTargetPanel extends JPanel {
             }
         });
 
-        // ================= SORT COMBO =================
         cbSort = new JComboBox<>(new String[]{
                 "Default",
                 "Deadline Terdekat",
@@ -48,14 +45,12 @@ public class ListTargetPanel extends JPanel {
 
         cbSort.addActionListener(e -> sortData());
 
-        // ================= TOP PANEL =================
         JPanel top = new JPanel();
         top.add(new JLabel("Search: "));
         top.add(tfSearch);
         top.add(new JLabel("Urutkan: "));
         top.add(cbSort);
 
-        // ================= BUTTON =================
         RoundedButton btnEdit = new RoundedButton("Edit");
         RoundedButton btnDone = new RoundedButton("Tandai Selesai");
         RoundedButton btnDelete = new RoundedButton("Hapus");
@@ -77,13 +72,11 @@ public class ListTargetPanel extends JPanel {
         add(new JScrollPane(table), BorderLayout.CENTER);
         add(bottom, BorderLayout.SOUTH);
 
-        // ================= ACTION =================
         btnDelete.addActionListener(e -> deleteData());
         btnDone.addActionListener(e -> markDone());
         btnEdit.addActionListener(e -> editData());
     }
 
-    // ================= REFRESH =================
     public void refresh() {
         model.setRowCount(0);
         for (StudyTarget t : DataStore.targets) {
@@ -96,7 +89,6 @@ public class ListTargetPanel extends JPanel {
         }
     }
 
-    // ================= SEARCH =================
     private void search(String key) {
         model.setRowCount(0);
         for (StudyTarget t : DataStore.targets) {
@@ -111,7 +103,6 @@ public class ListTargetPanel extends JPanel {
         }
     }
 
-    // ================= SORT =================
     private void sortData() {
         String selected = cbSort.getSelectedItem().toString();
 
@@ -137,7 +128,6 @@ public class ListTargetPanel extends JPanel {
         refresh();
     }
 
-    // ================= DELETE =================
     private void deleteData() {
         int row = table.getSelectedRow();
         if (row >= 0) {
@@ -149,7 +139,7 @@ public class ListTargetPanel extends JPanel {
         }
     }
 
-    // ================= DONE =================
+
     private void markDone() {
         int row = table.getSelectedRow();
         if (row >= 0) {
@@ -161,7 +151,6 @@ public class ListTargetPanel extends JPanel {
         }
     }
 
-    // ================= EDIT =================
     private void editData() {
         int row = table.getSelectedRow();
         if (row < 0) {
