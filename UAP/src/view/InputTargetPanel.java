@@ -26,7 +26,7 @@ public class InputTargetPanel extends JPanel {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         gbc.gridx = 0; gbc.gridy = 0;
-        add(new JLabel("Nama Tugas"), gbc);
+        add(new JLabel("nam terget"), gbc);
         gbc.gridx = 1;
         tfName.setPreferredSize(new Dimension(260, 32));
         add(tfName, gbc);
